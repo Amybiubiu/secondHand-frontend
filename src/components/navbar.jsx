@@ -8,10 +8,11 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import PublishIcon from "@material-ui/icons/Publish";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     margin: "30px 20px 30px auto",
-    width: "fit-content"
+    width: "fit-content",
+    // background: theme.palette.primary.main
   },
   link: {
     display: "flex",
