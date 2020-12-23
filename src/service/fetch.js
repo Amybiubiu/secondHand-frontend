@@ -8,7 +8,8 @@ const Fetch = (url, opt = {}) => {
   opt.method = opt.method || 'GET';
   opt.headers = {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'mode': 'cors'
   };
   if (opt.token) {
     opt.headers.token = opt.token;
@@ -16,7 +17,7 @@ const Fetch = (url, opt = {}) => {
 
   opt.body = JSON.stringify(opt.data) || null;
 
-  return fetch(url, opt)
+  return fetch('http://localhost:3000'+ url, opt)
     .then(response => {
       if (response.ok) {
         return response.json().then(res => {

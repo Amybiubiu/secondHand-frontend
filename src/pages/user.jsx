@@ -48,6 +48,18 @@ const User = () => {
               <ListItemText primary="我的卖出" />
             </ListItem>
             <Divider />
+            <ListItem className={classes.title}>
+              <ListItemText primary="评论管理" />
+            </ListItem>
+            <Divider />
+            <ListItem button component={Link} to={`${url}/publish`}>
+              <ListItemText primary="我发出的评论" />
+            </ListItem>
+            <Divider />
+            <ListItem button component={Link} to={`${url}/publish`}>
+              <ListItemText primary="我收到的评论" />
+            </ListItem>
+            <Divider />
           </List>
         </div>
         <Switch>

@@ -20,7 +20,7 @@ function App() {
         <Divider />
         <div >
           <Switch>
-          <Route path="/test">
+            <Route path="/test">
               <Test />
             </Route>
             <Route exact path="/">
