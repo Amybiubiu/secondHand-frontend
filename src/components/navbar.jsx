@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   container: {
     margin: "30px 20px 30px auto",
     width: "fit-content",
+    height: "50px"
     // background: theme.palette.primary.main
   },
   link: {
