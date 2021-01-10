@@ -7,6 +7,7 @@ import sysTheme from "./theme"
 import Admin from "./pages/admin"
 import Container from "./pages/container";
 import Login from "./pages/login";
+import Manage from "./pages/manage"
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
             </Route>
             <Route path="/admin">
               <Admin />
+            </Route>
+            <Route path="/manage">
+              <Manage />
             </Route>
             <Route path="/">
               <Container />

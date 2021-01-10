@@ -4,10 +4,11 @@ function encodeUrlParams(data) {
       .join("&");
 }
 
-const FetchData = ({method, data={}, url, query={}}) => {
+const FetchData = ({method='GET', data={}, url, query={}}) => {
     const part_url = query ? `${url}/?${encodeUrlParams(query)}` : url
     return fetch('http://localhost:3000'+part_url, {
         method: method,
+        mode: 'cors',
         body: JSON.stringify(data),
         header: new Headers({
             'Content-Type': 'application/json',

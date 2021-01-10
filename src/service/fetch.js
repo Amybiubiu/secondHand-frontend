@@ -8,7 +8,8 @@ const Fetch = (url, opt = {}) => {
   opt.method = opt.method || 'GET';
   opt.headers = {
     Accept: 'application/json',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'mode': 'cors'
   };
   if (opt.token) {
     opt.headers.token = opt.token;

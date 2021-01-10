@@ -31,12 +31,12 @@ const useStyles = makeStyles(() => ({
         marginLeft: "10px",
         marginRight: "10px"
     },
-    root: {
+    r: {
         display: "flex",
         //justifyContent: "center",
         flexDirection: "row"
     },
-    centers: {
+    c: {
         //display: "flex",
         width: "100%"
     }
@@ -47,8 +47,8 @@ const Container = () => {
     const classes = useStyles();
 
     return (
-    <Router className={classes.root}>
-        <div className={classes.centers}>
+    <Router className={classes.r}>
+        <div className={classes.c}>
         <Navbar />
         <Divider />
 
