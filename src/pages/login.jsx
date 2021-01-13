@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'
 
 import Input from '../components/input';
-import { Autocomplete } from "element-ui";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -116,7 +115,7 @@ const Login = () => {
                         token
                     )
                     //setRedirect(true);	
-                    this.props.history.push({pathname: '/'});	
+                    window.location.replace("http://localhost:3001/");	
 				} else {
                     alert("登录失败！请重新再试。")
                 }
