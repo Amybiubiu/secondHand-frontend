@@ -1,6 +1,6 @@
 import React,{useState, useEffect}from "react";
 import Fetch from '../service/fetch'
-import { withRouter,Redirect,Link } from 'react-router-dom';
+import { withRouter,Redirect,Link, useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -83,6 +83,7 @@ const Login = () => {
     const classes = useStyles();
     const [account, setAccount] = useState("");
     const [password, setPassword] = useState("");
+    let history = useHistory();
     //const [isRedirect,setRedirect] = useState(false);
     
     function handleChange(type, event) {
@@ -114,8 +115,16 @@ const Login = () => {
                         'token',
                         token
                     )
-                    //setRedirect(true);	
-                    window.location.replace("http://localhost:3001/");	
+                    localStorage.setItem(
+                        'account',
+                        account
+                    )	
+                    localStorage.setItem(
+                        'password',
+                        password
+                    )	
+                    //this.props.history.push({pathname: '/'});
+                    window.location.replace("http://localhost:3000/")	
 				} else {
                     alert("登录失败！请重新再试。")
                 }

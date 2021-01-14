@@ -1,5 +1,5 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React,{ useLayoutEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles'
 
 import Cart from "./cart";
@@ -45,6 +45,16 @@ const useStyles = makeStyles(() => ({
 const Container = () => {
 
     const classes = useStyles();
+
+    let history = useHistory();
+
+    useLayoutEffect(() => {
+        const token = localStorage.getItem("token");
+        if(!token) {
+            //window.location.replace("http://localhost:3000/login")
+            history.push('/login');
+        }
+    },[])
 
     return (
     <Router className={classes.r}>
