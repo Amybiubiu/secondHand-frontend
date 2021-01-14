@@ -10,7 +10,7 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    margin: "30px 20px 30px auto",
+    margin: "30px 20px 15px auto",
     width: "fit-content",
     height: "50px"
     // background: theme.palette.primary.main

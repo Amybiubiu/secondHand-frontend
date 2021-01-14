@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles'
 
 import Input from '../components/input';
-import { Autocomplete } from "element-ui";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -96,28 +95,23 @@ const Admin = () => {
     function submit() {
 		if(account && password) {
             
-			// Fetch(
-            //     'auth/login',
-            //     {
-			// 	    data: {
-			// 		'account': Number(account),
-			// 		'password': password
-			// 	    },
-            //         method: 'POST'
-            //     }
-			// ).then(res => {
-            //     console.log(res);
-			// 	if(res.code == 200) {
-            //         const {token} = res.token;
-            //         localStorage.setItem(
-            //             'token',
-            //             token
-            //         )
-            //         this.props.history.push('/index');		
-			// 	} else {
-            //         alert("登录失败！请重新再试。")
-            //     }
-			// })
+			Fetch(
+                '/admin/login',
+                {
+				    data: {
+					'account': Number(account),
+					'password': password
+				    },
+                    method: 'POST'
+                }
+			).then(res => {
+                console.log(res);
+				if(res.code == 0) {
+                    window.location.replace("http://localhost:3000/manage")
+				} else {
+                    alert("登录失败！请重新再试。")
+                }
+			})
 		}
 		if(!account) {
 			alert("帐号不能为空！")
