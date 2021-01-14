@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import Input from '../components/input';
 
-
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',

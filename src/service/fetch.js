@@ -17,7 +17,7 @@ const Fetch = (url, opt = {}) => {
 
   opt.body = JSON.stringify(opt.data) || null;
 
-  return fetch('http://localhost:3001'+url, opt)
+  return fetch('http://localhost:3000'+url, opt)
     .then(response => {
       if (response.ok) {
         return response.json().then(res => {

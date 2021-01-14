@@ -1,12 +1,12 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import defaultPic from "../img/book1.JPG"
+import defaultPic from "../img/default.png"
 
 const useStyle = makeStyles((theme)=>({
     root: {
         border: `2px solid ${theme.palette.divider}`,
         borderRadius: '20px',
-        display: 'inline-flex'
+        display: 'flex'
     },
     img: {
         width: '100px',
@@ -14,7 +14,9 @@ const useStyle = makeStyles((theme)=>({
         borderRadius: '20px'
     },
     text: {
-
+        '& span':{
+            marginRight: '18px'
+        }
     },
     row: {
         margin: '20px 10px',
@@ -25,11 +27,11 @@ const Product = ({name, category, pic, prices, state}) =>{
     const classes = useStyle();
     return(
         <div className={classes.root}>
-            <img className={classes.img} src={pic} alt="书本封面"/>
+            <img className={classes.img} src={pic||defaultPic} alt="书本封面"/>
             <div className={classes.text}>
                 <div className={classes.row}>
                 <span>{name+"  "}</span>
-                <span>类别：{category} {" "}</span>
+                <span>类别：{category||"二手书"} {" "}</span>
                 </div>
                 <div className={classes.row}>
                 <span>价格：{prices}{" "}</span>

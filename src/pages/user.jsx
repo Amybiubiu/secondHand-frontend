@@ -8,7 +8,7 @@ import {
   useRouteMatch,
   useHistory
 } from "react-router-dom";
-import {UserPublish, UserBuy, UserSell} from './userAbout'
+import {UserPublish, UserBuy, UserSell, ReceiveMessage, CommentMessage} from './userAbout'
 import { List, ListItem, ListItemIcon, ListItemText, Divider } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -52,11 +52,11 @@ const User = () => {
               <ListItemText primary="评论管理" />
             </ListItem>
             <Divider />
-            <ListItem button component={Link} to={`${url}/publish`}>
+            <ListItem button component={Link} to={`${url}/comment`}>
               <ListItemText primary="我发出的评论" />
             </ListItem>
             <Divider />
-            <ListItem button component={Link} to={`${url}/publish`}>
+            <ListItem button component={Link} to={`${url}/receive`}>
               <ListItemText primary="我收到的评论" />
             </ListItem>
             <Divider />
@@ -74,6 +74,12 @@ const User = () => {
           </Route>
           <Route path={`${path}/sell`}>
             <UserSell />
+          </Route>
+          <Route path={`${path}/receive`}>
+            <ReceiveMessage />
+          </Route>
+          <Route path={`${path}/comment`}>
+            <CommentMessage />
           </Route>
         </Switch>
       </div>
