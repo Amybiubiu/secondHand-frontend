@@ -96,7 +96,7 @@ const Home = () => {
             '/cart/add',
             {
                 data: {
-                    'product_id': 1,
+                    'product_id': id,
                     'user_id': account
                 },
                 method: 'POST'
@@ -120,7 +120,7 @@ const Home = () => {
 
     const list = [
         {
-            "product_id": "10",
+            "product_id": "5",
             "product_name": "冀西南林路行",
             "product_class": "其他",
             "product_pic": "https://img9.doubanio.com/view/subject/m/public/s29629026.jpg",

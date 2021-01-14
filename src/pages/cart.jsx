@@ -141,9 +141,10 @@ export default function Cart() {
   const [checks, setChecks] = React.useState({});
   const [open, setOpen] = React.useState(false);
   useEffect(()=>{
-    Fetch('/cart/list?user_id=2018214877').then(
+    const account = localStorage.getItem("account")
+    Fetch(`/cart/list?user_id=${account}`).then(
       res => {
-        // console.log(res);
+        console.log(res);
         setProducts(res.data);
         for(let i in res.data){
           setChecks({...checks, [res.data[i].product_id]: false})
@@ -168,11 +169,12 @@ export default function Cart() {
 
   const handleAgree = () => {
     setOpen(false)
+    const account = localStorage.getItem("account")
     for(let i in products){
       if(checks[products[i].product_id]){
         Fetch('/cart/checkout', 
         {data: 
-          {user_id: 2018214877, 
+          {user_id: account, 
            product_id: products[i].product_id
           }, 
          method: 'POST'}).then(
