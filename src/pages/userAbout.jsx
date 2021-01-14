@@ -103,7 +103,7 @@ export function UserSell(){
                     category={item.product_class} 
                     pic={item.product_pic} 
                     prices={item.product_price} 
-                    state={item.product_state} />
+                    userName={item.user_name} />
                 </div>
             ))}
         </div>

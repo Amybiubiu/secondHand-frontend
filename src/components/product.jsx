@@ -23,8 +23,9 @@ const useStyle = makeStyles((theme)=>({
     }
 }))
 
-const Product = ({name, category, pic, prices, state}) =>{
+const Product = ({name, category, pic, prices, state, userName}) =>{
     const classes = useStyle();
+    const Fit =() => userName? (<span>{`购买人： ${userName}`}</span>):(<span>状态：{state?"在售":"无货"}</span>)
     return(
         <div className={classes.root}>
             <img className={classes.img} src={pic||defaultPic} alt="书本封面"/>
@@ -35,7 +36,7 @@ const Product = ({name, category, pic, prices, state}) =>{
                 </div>
                 <div className={classes.row}>
                 <span>价格：{prices}{" "}</span>
-                <span>状态：{state?"在售":"无货"}</span>
+                <Fit />
                 </div>
             </div>
         </div>
